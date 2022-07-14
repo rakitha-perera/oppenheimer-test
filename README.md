@@ -2,7 +2,7 @@
 
 This project is an end-to-end test which targets the Oppenheimer Project.
 
-Parallel to the automation testing work, a few manual/exploratory testing rounds were also carried out. You can find about more details on the bugs found here: [docs/Bugs.pdf] (docs/Bugs.pdf)
+Parallel to the automation testing work, a few manual/exploratory testing rounds were also carried out. You can find about more details on the bugs found here: [docs/Bugs.pdf](docs/Bugs.pdf)
 
 ## <a name="run-tests"></a> Running Tests
 
