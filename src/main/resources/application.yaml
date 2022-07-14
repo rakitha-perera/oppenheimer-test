@@ -1,0 +1,18 @@
+runner:
+  browser: chrome
+  headless: false
+  timeout: 20
+
+api:
+  base-url: "http://localhost"
+  port: "9997"
+
+file-paths:
+  add-user-csv: "/Users/rakithaperera/QE Technical Challenge/CsvTestUsers.csv"
+
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3306/testdb
+    username: user
+    password: pwd
+    driver-class-name: org.mariadb.jdbc.Driver
