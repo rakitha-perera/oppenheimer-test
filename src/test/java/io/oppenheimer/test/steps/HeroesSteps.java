@@ -29,13 +29,10 @@ import java.util.stream.Collectors;
 public class HeroesSteps {
 
     private final OppenheimerAPIClient oppenheimerAPIClient;
-    @Autowired
     private final HeroRepository heroRepository;
-
     private final ClerkDashboardPage clerkDashboardPage;
     private final GovernorDashboardPage governorDashboardPage;
     private final DynamicData dynamicData;
-
     private final FilePathProperties filePathProperties;
 
     @Given("The hero {string} does not exist in the database")
@@ -155,12 +152,12 @@ public class HeroesSteps {
 
     @Then("verify an error message is shown on dashboard")
     public void verifyLoginErrorMessageIsDisplayed(){
-        Assertions.assertTrue(clerkDashboardPage.isWarningBlockVisible());
+        Assertions.assertTrue(clerkDashboardPage.isWarningBlockDisplayed());
     }
 
     @Then("verify the error message {string} is shown")
     public void verifyTheErrorMessageIsShown(String errorMessage) {
-        Assertions.assertTrue(clerkDashboardPage.isWarningBlockVisible());
+        Assertions.assertTrue(clerkDashboardPage.isWarningBlockDisplayed());
         Assertions.assertTrue(clerkDashboardPage.getErrorMessage().contains(errorMessage));
     }
 }

@@ -3,7 +3,7 @@ runner:
   headless: false
   timeout: 20
 
-api:
+app:
   base-url: "http://localhost"
   port: "9997"
 

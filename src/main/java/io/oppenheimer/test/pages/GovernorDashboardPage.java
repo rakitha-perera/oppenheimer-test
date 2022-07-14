@@ -10,8 +10,10 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.stereotype.Component;
 
-import java.time.Duration;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Component
 public class GovernorDashboardPage extends DashboardBasePage {
@@ -26,13 +28,10 @@ public class GovernorDashboardPage extends DashboardBasePage {
     @FindBy(id = "natid")
     private WebElement inputNatIdSearch;
 
-    By table = By.xpath("//*[@id='search-all-table']");
-    By tableRows = By.xpath("//*[@id='search-all-table']/tbody/tr");
-    By tableColumns = By.xpath("//*[@id='search-all-table']/thead/tr/th");
-    By tableProcessingPopup = By.xpath("//div[@id='search-all-table_processing']");
-    By nextPageBtn = By.id("//li[@id='search-all-table_next']");
-    By inputSearchInListAll = By.xpath("//div[@id='search-all-table_filter']//input");
-    By noOfEntriesSelect = By.xpath("//div[@id='search-all-table_wrapper']//select");
+    private final By tableRows = By.xpath("//*[@id='search-all-table']/tbody/tr");
+    private final By tableProcessingPopup = By.xpath("//div[@id='search-all-table_processing']");
+    private final By inputSearchInListAll = By.xpath("//div[@id='search-all-table_filter']//input");
+    private final By noOfEntriesSelect = By.xpath("//div[@id='search-all-table_wrapper']//select");
 
     public void listAll() {
         listAllBtn.click();
@@ -51,8 +50,6 @@ public class GovernorDashboardPage extends DashboardBasePage {
 
     private void moveToNextPage() {
         String xpath = "//li[@id='search-all-table_next']/a";
-        //driver.manage().window().maximize();
-        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(xpath)));
         ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,document.body.scrollHeight)", driver.findElement(By.xpath(xpath)));
         driver.findElement(By.xpath(xpath)).click();
@@ -82,7 +79,7 @@ public class GovernorDashboardPage extends DashboardBasePage {
         return new HashSet<>(heroes);
     }
 
-    public void searchHeroesByString(String searchString){
+    public void searchHeroesByString(String searchString) {
         listAll();
         driver.findElement(inputSearchInListAll).sendKeys(searchString);
     }

@@ -12,15 +12,15 @@ The following properties in the Application.yaml file can be configured.
 * runner.timeout: default webdriver wait timeout in seconds
 
 
-* api.base-url: base url for oppenheimer-project Rest API
-* api.port: hosted port for oppenheimer-project Rest API
+* app.base-url: base url of oppenheimer-project (Application Under Test)
+* app.port: hosted port of oppenheimer-project (Application Under Test)
 
 
 * file-paths.add-user-csv: the temporary location that the csv files to be stored before uploading
 
 ### <a name="run-gradle"></a> Running tests via Gradle
 
-Command: `./gradlew clean test
+Command: `./gradlew clean test`
 
 ### <a name="run-intellij"></a> Running tests in IntelliJ
 

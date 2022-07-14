@@ -60,9 +60,9 @@ public class ClerkDashboardPage extends DashboardBasePage {
     private WebElement createBtn;
 
     private final String notificationBlockBasePath = "//div[@id='notification-block']";
-    By warningNotificationBlock = By.xpath(notificationBlockBasePath + "/div[@class='bg-warning pt-2']");
-    By errorMessage = By.xpath(notificationBlockBasePath + "//div[@class='col-12'][1]/p");
-    By successNotificationBlock = By.xpath("//div[@id='notification-block']/div[@class='bg-success pt-2']");
+    private final By warningNotificationBlock = By.xpath(notificationBlockBasePath + "/div[@class='bg-warning pt-2']");
+    private final By errorMessage = By.xpath(notificationBlockBasePath + "//div[@class='col-12'][1]/p");
+    private final By successNotificationBlock = By.xpath(notificationBlockBasePath + "/div[@class='bg-success pt-2']");
 
     public void addUser(Hero hero) {
         addHeroDropDown.click();
@@ -94,7 +94,6 @@ public class ClerkDashboardPage extends DashboardBasePage {
         createBtn.click();
     }
 
-
     public void uploadCsv(String filePath) {
         addHeroDropDown.click();
         uploadCSVListItem.click();
@@ -102,7 +101,7 @@ public class ClerkDashboardPage extends DashboardBasePage {
         createBtn.click();
     }
 
-    public boolean isWarningBlockVisible() {
+    public boolean isWarningBlockDisplayed() {
         wait.until(ExpectedConditions.elementToBeClickable(warningNotificationBlock));
         return driver.findElement(warningNotificationBlock).isDisplayed();
     }

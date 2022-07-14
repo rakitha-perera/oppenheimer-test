@@ -7,8 +7,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.stereotype.Component;
 
-import java.time.Duration;
-
 @Component
 public class BookKeeperDashboardPage extends DashboardBasePage {
 
@@ -20,7 +18,6 @@ public class BookKeeperDashboardPage extends DashboardBasePage {
     private WebElement generateTaxReliefFileBtn;
 
     public void generateTaxReliefFile() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(generateTaxReliefFileBtn));
         generateTaxReliefFileBtn.click();
     }

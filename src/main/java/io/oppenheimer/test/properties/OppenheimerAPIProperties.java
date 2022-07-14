@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Data
 @Configuration
-@ConfigurationProperties("api")
+@ConfigurationProperties("app")
 public class OppenheimerAPIProperties {
     private String baseUrl;
     private String port;

@@ -18,8 +18,8 @@ public class DynamicData {
     private TaxFileJpa latestTaxFileRecord;
     private List<Hero> listOfHeroesToBeDeleted = new ArrayList<>();
 
-    public void addHeroTobeDeleted(Hero hero){
-        if(listOfHeroesToBeDeleted.stream().noneMatch(h -> h.getNatid().equals(hero.getNatid()))){
+    public void addHeroTobeDeleted(Hero hero) {
+        if (listOfHeroesToBeDeleted.stream().noneMatch(h -> h.getNatid().equals(hero.getNatid()))) {
             listOfHeroesToBeDeleted.add(hero);
         }
     }

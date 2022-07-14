@@ -5,6 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.oppenheimer.test.pages.LoginPage;
 import lombok.RequiredArgsConstructor;
+import org.junit.jupiter.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @RequiredArgsConstructor(onConstructor_ = {@Autowired})
@@ -24,6 +25,6 @@ public class LoginSteps {
 
     @Then("verify an error message is shown")
     public void verifyLoginErrorMessageIsDisplayed(){
-        loginPage.verifyErrorMessageIsDisplayed();
+        Assertions.assertTrue(loginPage.verifyErrorMessageIsDisplayed());
     }
 }

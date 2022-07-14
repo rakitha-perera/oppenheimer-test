@@ -46,9 +46,5 @@ public class SimpleRestClient implements RestClient {
                     response.body().asString()
             );
         }
-
-//        String test = response.getStatusCode() + " " +
-//                response.statusLine() + " " +
-//                response.body().asString() + " " + RestAssured.baseURI + " " + RestAssured.port;
     }
 }
